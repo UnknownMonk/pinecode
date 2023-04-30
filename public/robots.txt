@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://PineCode.web3templates.com/sitemap-index.xml

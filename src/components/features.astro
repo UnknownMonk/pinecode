@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: " Custom Frameworks for Your Business Needs",
+    description:
+      "At PineCode, we can build your website using a range of frameworks, including React, Svelte, Vue, Preact, web components, or plain HTML + JavaScript. We'll work with you to choose the best option for your business needs.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Streamlined Websites and Products",
+    description:
+      "At PineCode, we believe that a fast website is crucial for achieving your business goals. Our web design and development services are tailored to help you streamline your online presence and get you to where you want to be faster. With a faster website, you'll be able to handle the influx of customers that will be flooding in after they see how professional your online presence is. Let us help you take your business to the next level.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Dynamic Components When You Need Them",
+    description:
+      "With on-demand components, we can automatically add JavaScript to your website when interactive components become visible on the page. This can enhance functionality without sacrificing performance.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Flexible Integrations with PineCode",
+    description:
+      "PineCode's web development services can integrate a variety of tools, including TypeScript, Scoped CSS, CSS Modules, Tailwind, or Markdown, You want API intergrations say less fam we got you! We'll ensure that your website is built to your exact specifications.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "SEO-Optimized Websites",
+    description:
+      "PineCode's web development services prioritize search engine optimization, with automatic sitemaps, RSS feeds, pagination, and collections to improve your website's visibility and ranking. Let us help you reach more customers.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Community-Oriented Approach",
+    description:
+      "At PineCode, we take great pride in being an integral part of our local community. We work closely with businesses in the area to build their online presence, whether it's by creating a brand new website or enhancing an existing one. Our reputation as a reliable and trustworthy web design and development service is our most valuable asset, and we strive to maintain it by providing exceptional service and support to our clients.",
+    icon: "bx:bxs-user",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-3xl lg:text-5xl font-bold lg:tracking-tight">
+    PineCode has everything you<br /> need to build a website
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    PineCode comes batteries included. We take the best parts of your website
+    and make it better!
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

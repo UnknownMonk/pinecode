@@ -1,0 +1,76 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Pricing from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Service Perks",
+    price: "Free",
+    popular: false,
+    features: [
+      "Consultations",
+      "SEO Strategies",
+      "Site Maps",
+      "DNS Switching",
+      "Anytime Support",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Flat Fees",
+    price: {
+      monthly: "$55 Amt/Hr",
+      annual: "$16",
+      discount: "10%",
+      original: "$24",
+    },
+    popular: true,
+    features: [
+      "What You Are Quoted Is What You Pay",
+      "As Many Meetings As You Need",
+      "Advanced Integrations",
+      "Discounts for referals",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Feel Free To Challenge Us",
+    price: "Custom Work",
+    popular: false,
+    features: [
+      "Got A Idea Lets Hear It",
+      "Custom Needs Call US",
+      "No Job to Big or Small",
+      "Got Bugs We Will Fix Them",
+      "Dedicated Account Manager",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc">
+        Simple & Predictable pricing. No Surprises.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+  </Container>
+</Layout>

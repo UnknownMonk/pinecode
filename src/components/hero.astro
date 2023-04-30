@@ -1,0 +1,84 @@
+---
+import { Picture } from "@astrojs/image/components";
+import heroImage from "assets/heroshadow.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<head>
+  <script>
+    import { addMousemoveEvent } from "../utils/script";
+
+    addMousemoveEvent();
+  </script>
+</head>
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="relative py-6 md:order-1 hidden md:block">
+    <Picture
+      id="anchor"
+      src={heroImage}
+      alt="PineCode Logo"
+      widths={[200, 600, 600]}
+      aspectRatio="4:4"
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+
+    <div id="eyes">
+      <img
+        class="eye absolute rotate-[] top-[260px] right-[322px] h-[25px] w-[25px]"
+        src="eyes.png"
+        alt="eyes"
+      />
+      <img
+        class="eye absolute top-[260px] left-[317px] h-[25px] w-[25px]"
+        src="eyes.png"
+        alt="eyes"
+      />
+    </div>
+  </div>
+  <div class="mt-[100px]">
+    <h1
+      class="text-5xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Web development done with PineCode
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      Pine Code is a local web development shop that is open to building large
+      scale projects or small addition to your existing website.We are local to
+      the Marion County,Florida area and like helping our neighbors out.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="#"
+        href="/public/resume.zip"
+        target="_blank"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+        Download My Resume
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://github.com/surjithctly/PineCode"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        GitHub Repo
+      </Link>
+      <Link
+        size="lg"
+        rel="noopener"
+        href="https://github.com/surjithctly/PineCode"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-white w-4 h-4" name="bx:bxl-linkedin" />
+        Linkedin
+      </Link>
+    </div>
+  </div>
+</main>
