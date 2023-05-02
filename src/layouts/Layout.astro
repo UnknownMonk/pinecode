@@ -11,7 +11,7 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/websitescreenshot.png",
   Astro.site
 ).toString();
 
@@ -19,7 +19,7 @@ const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "PineCode"
-  : "PineCode - Starter Template for Astro with Tailwind CSS";
+  : "PineCode - Web Development Company";
 ---
 
 <!DOCTYPE html>
@@ -33,18 +33,18 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="PineCode is a starter website template for Astro built with TailwindCSS."
+      description="PineCode is a web development company that serves the Florida."
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@jonasESCR_media",
+        site: "@PineCode",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `PineCode - Starter Template for Astro`,
+          title: `PineCode - Florida Web Development`,
           image: resolvedImageWithDomain,
         },
         image: {

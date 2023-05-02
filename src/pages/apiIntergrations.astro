@@ -1,0 +1,56 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+
+const content = [
+  {
+    title: "What is a API Intergration?",
+    discription: `Web API integration refers to the process of connecting different software systems and applications through APIs (Application Programming Interfaces) to facilitate data exchange and functionality sharing. It allows businesses to streamline their operations, automate processes, and enhance customer experiences by providing real-time access to data from multiple systems. With web API integration, businesses can create a seamless user experience across multiple platforms, and leverage the strengths of different applications to achieve their goals. It is an essential component of modern
+     software development and helps businesses stay competitive in today's digital landscape.`,
+  },
+];
+const features = [
+  {
+    title: "API Platforms",
+    description:
+      "At PineCode, we offer API integration services for a wide range of platforms and applications. Our team of experienced developers can help you integrate APIs from different providers, allowing you to leverage their functionality and data. We can work with RESTful APIs, SOAP APIs, JSON APIs, and more, and we can help you choose the best API for your needs based on your requirements and budget.",
+    icon: "api",
+  },
+  {
+    title: "Testing and Documentation",
+    description:
+      "Our API integration services include full API documentation and testing to ensure that your integration is working correctly. We also provide ongoing support and maintenance to help you keep your API integration up to date and secure. We can help you with API versioning, error handling, and performance optimization, and we can help you troubleshoot any issues that arise.",
+    icon: "api",
+  },
+  {
+    title: "Custom API & Automation",
+    description: `With PineCode's API integration services, you can streamline your business processes, reduce manual data entry, and improve your overall efficiency. We can help you automate workflows, sync data across different systems, and create custom integrations that meet your specific business needs. Our goal is to help you save time and money while improving your productivity and competitiveness in the marketplace.`,
+    icon: "api",
+  },
+];
+
+const apiInfo = [
+  {
+    headline: "API Software Integration Service",
+    blurb:
+      "At PineCode, we understand that many businesses operate with a complex and time-consuming processing system due to the lack of software integration. That's why we offer software integration services to manage and bring disparate systems together. We can help you to integrate your software systems to improve efficiencies, reduce manual inputting and switching between systems, and offer improved visibility into your business processes.",
+  },
+];
+---
+
+<Layout title="Api Intergrations">
+  <Container>
+    <LandingPageHeader content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>

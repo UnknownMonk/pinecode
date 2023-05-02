@@ -1,0 +1,55 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+
+const content = [
+  {
+    title: "What Is Website Design",
+    discription: `Web design is the process of creating a website's visual layout, user interface, and overall user experience. It involves both aesthetic and functional considerations, such as choosing the right color scheme, typography, and page layout, as well as ensuring the website is easy to navigate and use. At PineCode, we take a highly personalized approach to web design, working closely with our clients to understand their unique goals, brand identity, and target audience.`,
+  },
+];
+const features = [
+  {
+    title: "Web Design Consultation",
+    description:
+      "Our web design consultation service is designed to help you get started on the right foot. We'll work closely with you to understand your business needs, target audience, and goals. Our team of experts will then develop a custom web design plan that's tailored to your unique requirements. We believe that communication is key, which is why we'll keep you informed at every step of the way, ensuring that the final product meets your expectations.",
+    icon: "design",
+  },
+  {
+    title: "Responsive Design",
+    description:
+      "In today's mobile-first world, having a responsive website design is crucial. That's why all of our website designs are created with a mobile-first approach, ensuring that they are optimized for a variety of devices and screen sizes. Whether your customers are browsing your website on a desktop computer or a mobile device, they'll have a seamless experience. We'll ensure that your website looks great and functions well on all devices, helping you reach a wider audience and drive more traffic to your site.",
+    icon: "design",
+  },
+  {
+    title: "E-commerce Solutions",
+    description: `If you're looking to sell products or services online, we can help. Our e-commerce solutions are designed to meet the needs of businesses of all sizes. We'll work with you to understand your specific requirements, and then create a custom e-commerce platform that's easy to use and manage. From product listings to payment gateways, we'll take care of everything, ensuring that your customers have a seamless shopping experience. With our e-commerce solutions, you can focus on growing your business while we take care of the technical details.`,
+    icon: "design",
+  },
+];
+
+const apiInfo = [
+  {
+    headline: "Website Design Service",
+    blurb:
+      "At PineCode, we believe that a well-designed website is essential for any business looking to establish a strong online presence. That's why we offer a comprehensive website design service that's tailored to your unique business needs. Our experienced team of web designers works closely with our clients to create visually stunning websites that are both functional and user-friendly. Whether you need a simple brochure site or a complex e-commerce platform, we have the expertise to create a website that not only looks great but also delivers results. We understand the importance of having a website that's optimized for search engines and mobile devices, and we ensure that all of our websites are designed with these factors in mind. By choosing PineCode for your website design needs, you can rest assured that you're getting a high-quality solution that's designed to help your business stand out from the competition.",
+  },
+];
+---
+
+<Layout title="Web Site Design">
+  <Container>
+    <LandingPageHeader content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>

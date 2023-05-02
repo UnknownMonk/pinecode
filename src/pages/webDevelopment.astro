@@ -1,0 +1,57 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+
+const content = [
+  {
+    title: "What is Web Developmet at PineCode",
+    discription: `Web development is the process of designing, building, and maintaining websites. It involves a combination of technical skills and creative vision to create functional and visually appealing websites. As businesses increasingly rely on their online presence to reach and engage with customers, web development has become an essential part of any modern business strategy. A well-designed website can help a business establish credibility, improve user experience, and drive conversions.
+
+    `,
+  },
+];
+const features = [
+  {
+    title: "Web Development Planning",
+    description:
+      "At PineCode, we take a collaborative approach to website development planning, involving our clients in every stage of the process. We start by understanding the client's business objectives and target audience. Then, we move on to defining the scope of the project, creating wireframes, and developing a sitemap. Our planning process ensures that our clients get a website that is not only visually appealing but also easy to navigate, user-friendly, and optimized for search engines.",
+    icon: "development",
+  },
+  {
+    title: "Website Development",
+    description:
+      "Our website development process involves converting the design into a fully functional website. We work with a variety of technologies, including HTML, CSS, JavaScript, and PHP, to ensure that our clients' websites are responsive and perform well on all devices. Our development team is experienced in integrating third-party tools, such as payment gateways, CRMs, and marketing automation software, into our clients' websites to provide a seamless user experience.",
+    icon: "development",
+  },
+  {
+    title: "Website Testing and Launch",
+    description: `Before launching a website, we rigorously test it to ensure that it functions optimally and is bug-free. Our testing process includes checking for compatibility across different browsers, optimizing loading speed, and ensuring accessibility compliance. Once we are confident that the website is ready, we launch it, providing ongoing support and maintenance to ensure it stays up to date and secure.`,
+    icon: "development",
+  },
+];
+
+const apiInfo = [
+  {
+    headline: "Web Development as a Services",
+    blurb:
+      "At PineCode, we approach web development as a service with a commitment to creating custom solutions that meet our clients' unique needs. We start by understanding our clients' goals and requirements, and we work closely with them throughout the entire development process to ensure that the end result exceeds their expectations. Our team of experienced developers are constantly learning and staying up-to-date with the latest web development technologies to ensure that we can offer the best solutions possible to our clients. We also believe in transparent communication and collaboration, and we work hard to keep our clients informed and involved throughout the entire development process.",
+  },
+];
+---
+
+<Layout title="Api Intergrations">
+  <Container>
+    <LandingPageHeader content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>

@@ -1,0 +1,56 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+
+const content = [
+  {
+    title: "What Is SEO?",
+    discription: `SEO, or search engine optimization, refers to the process of optimizing a website or online content to improve its ranking and visibility in search
+     engine results pages. There are several aspects of SEO that need to be taken into account to run a successful site`,
+  },
+];
+const features = [
+  {
+    title: "Keyword research",
+    description:
+      "Our software integration services include enabling third-party systems to process payments, automating certain segmentation practices, and building APIs to allow data to be transferred, shared, and saved from legacy software to new interfaces or systems.",
+    icon: "seo",
+  },
+  {
+    title: "On-page Optimization",
+    description:
+      "On-page optimization includes optimizing the content on a website or web page, including meta descriptions, title tags, and headers",
+    icon: "seo",
+  },
+  {
+    title: "Link building & Content Creation",
+    description: `Link building involves acquiring high-quality backlinks to a website from other reputable sites, while content creation is about creating engaging and informative content that attracts and retains the attention of visitors.`,
+    icon: "seo",
+  },
+];
+
+const apiInfo = [
+  {
+    headline: "SEO & Marketing Service",
+    blurb:
+      "At PineCode, we understand the importance of having a strong online presence, and that starts with implementing an effective SEO strategy. With so many businesses competing for visibility on search engines like Google, it's essential to have a personalized approach that's tailored to your business needs. That's why we work closely with our clients to understand their goals, target audience, and industry to develop a customized SEO strategy that delivers results. We hold ourselves accountable for the results we achieve and are committed to ensuring our clients see improvements in their search engine rankings and online visibility. By working with PineCode, you can rest assured that you're getting a comprehensive SEO solution that's designed to help your business succeed in the online world.",
+  },
+];
+---
+
+<Layout title="Seo & Mrketing ">
+  <Container>
+    <LandingPageHeader content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>
