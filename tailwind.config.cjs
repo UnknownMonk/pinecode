@@ -7,6 +7,7 @@ module.exports = {
       backgroundImage: {
         forest: "url('/forest.svg')",
         footerStump: "url('/stumpfloor.png')",
+        floridaPostCard: "url('/FloridaPostCard.svg')",
       },
       fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],

@@ -1,0 +1,67 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+import Region from "@components/landingPageRegion.astro";
+import villages from "@assets/ocala.png";
+
+const apiInfo = [
+  {
+    headline: "Web Development Ocala Florida",
+    blurb: `PineCode is proud to be a local company serving the Ocala community 
+    with our top-notch web development services. As a local business ourselves, 
+    we understand the importance of supporting our community and helping local 
+    businesses succeed. That's why we offer personalized consultations and custom
+     solutions to meet the unique needs of each of our clients. Whether you need a
+      new website, an e-commerce platform, or API integration, our team of experts 
+      will work with you every step of the way to ensure that your project is a success.
+       And because we're local, we're always available to meet in person to go over whatever needs you may have. At PineCode, we're dedicated to helping businesses in Ocala thrive in the digital age.`,
+  },
+];
+
+const content = [
+  {
+    title: "Ocala Florida",
+    discription: ` 
+    PineCode is committed to helping businesses in Ocala, Florida, succeed online. We offer a wide range of services that are designed to meet the unique needs of businesses in the 
+    area, and we work closely with our clients to ensure that they are satisfied with the results.  `,
+  },
+];
+
+const features = [
+  {
+    title: "Web Development",
+    description: ` PineCode offers comprehensive web development services for businesses in Ocala, Florida. We understand that businesses in Ocala have unique needs, and we work closely with them to create a customized web development plan that meets their specific requirements. Our team of experienced developers creates responsive, mobile-friendly websites
+     that are optimized for search engines, ensuring that our clients can reach their target audience online.`,
+    icon: "development",
+  },
+  {
+    title: "SEO",
+    description: `At PineCode, we know that getting noticed online is essential for businesses in Ocala, Florida. That's why we offer top-notch search engine optimization (SEO) services that help businesses improve their online visibility and attract more customers. Our team of SEO experts uses the latest 
+    techniques and strategies to boost our clients' rankings on search engines like Google, Bing, and Yahoo.`,
+    icon: "seo",
+  },
+  {
+    title: "API Integration",
+    description: `PineCode offers API integration services to businesses in Ocala, Florida. We understand that businesses rely on a range of software applications to manage their operations, and we help them integrate these applications seamlessly to improve their overall efficiency. Our team of API integration experts works with businesses to identify the right integrations for their needs and
+     ensures that the integrations are implemented correctly, so they can focus on growing their business.`,
+    icon: "api",
+  },
+];
+---
+
+<Layout title="Web Development Ocala Florida ">
+  <Container>
+    <Region region={villages} content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>

@@ -1,0 +1,65 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+import Region from "@components/landingPageRegion.astro";
+import villages from "@assets/villages.webp";
+
+const apiInfo = [
+  {
+    headline: "Web Development The Villages Florida",
+    blurb: `PineCode provides top-notch web development services in The Villages, Florida. Our team of 
+      experienced developers uses the latest web technologies and programming languages to create 
+      custom websites that meet our clients' specific needs. Our goal is to help businesses in 
+      The Villages Florida establish a strong online presence by building responsive, user-friendly websites
+       that attract and engage their target audience. If you're looking for reliable and affordable web
+        development services in The Villages Florida, look no further than PineCode. Let us help you build
+         a website that ranks high for keywords for your business in the The Villages Florida.`,
+  },
+];
+
+const content = [
+  {
+    title: "The Villages Florida",
+    discription: `At PineCode, we take pride in being a local web development company that caters to the unique needs of The Villages community. As a business situated in the heart of Florida, we understand the importance of being able to communicate face-to-face with our clients. That's why we offer in-person consultations to better understand and cater to the needs of our clients. We understand that retirees in The Villages Florida may not be as familiar with the latest technology trends and development tools, but that's where we come in. Our team of experts can guide you through the web development process, creating a website that meets your needs and exceeds your expectations. With a focus on providing personalized service and attention 
+    to detail, we're committed to helping The Villages Florida residents build a strong online presence.`,
+  },
+];
+
+const features = [
+  {
+    title: "Website Design",
+    description: `We understand that many retirees in The Villages may not be tech-savvy and may require a user-friendly website. Our website designs are customized to fit the
+       needs of the retirement community, ensuring easy navigation and accessibility for all users.`,
+    icon: "design",
+  },
+  {
+    title: "SEO",
+    description: `As many retirees are looking to settle down in The Villages, it's essential to rank highly on search engines for keywords such as "retirement communities in The Villages" or "senior living in The Villages." 
+      PineCode's SEO strategies are tailored to target these keywords and help businesses in The Villages get discovered by potential customers.`,
+    icon: "seo",
+  },
+  {
+    title: "Web Development",
+    description: `PineCode's web development services can help businesses in The Villages create a robust online presence, including e-commerce capabilities for those selling products or services. Our team can also help with API integrations, 
+    ensuring that businesses can streamline their operations and improve their efficiency.`,
+    icon: "development",
+  },
+];
+---
+
+<Layout title="Web Development The Villages Florida ">
+  <Container>
+    <Region region={villages} content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>

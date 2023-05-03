@@ -1,0 +1,72 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+import Region from "@components/landingPageRegion.astro";
+import villages from "@assets/belleview.jpg";
+
+const apiInfo = [
+  {
+    headline: "Web Development Belleview Florida",
+    blurb: `At PineCode, we are proud to serve the local community of
+     Belleview, Florida. As a locally-owned business, we understand the
+      unique needs and challenges of the area and strive to provide personalized
+       services to meet those needs. Our team is dedicated to helping businesses 
+       in Belleview and the surrounding areas succeed online through our web development, 
+       web design, and SEO services. We know the importance of building strong relationships
+        with our clients, which is why we offer in-person consultations to discuss their specific 
+        needs and goals. Whether you need a new website or want to improve your online presence, PineCode 
+        is here to help the residents of Belleview achieve their online goals.`,
+  },
+];
+
+const content = [
+  {
+    title: "Belleview Florida",
+    discription: ` 
+    At PineCode, we offer a range of web development services to cater to the needs
+     of the Belleview community. One of the key services we offer is website design
+      and development. We work closely with local businesses to create custom, user-friendly
+       websites that effectively showcase their products and services. Our team of experienced 
+       designers and developers ensures that each website is optimized for search engines, making 
+       it easy for potential customers in Belleview to find the business online. `,
+  },
+];
+
+const features = [
+  {
+    title: "Web Development",
+    description: ` PineCode helps businesses in Ocala, Florida to create a custom website that fits their needs. We use modern web technologies to create websites that are visually appealing, user-friendly, and mobile-responsive. Our team works
+     closely with clients to ensure that their website reflects their brand and meets their business goals.`,
+    icon: "development",
+  },
+  {
+    title: "SEO",
+    description: `PineCode offers search engine optimization (SEO) services to help businesses in Ocala, Florida improve their online visibility and attract more customers. Our team uses various strategies to improve the ranking of clients' websites on search engine result pages (SERPs), such as keyword research, on-page optimization,
+     and link building. We also provide monthly reports to track progress and adjust strategies accordingly.`,
+    icon: "seo",
+  },
+  {
+    title: "API Integration",
+    description: `PineCode can help businesses in Ocala, Florida integrate third-party APIs into their website or application. This allows clients to streamline their processes and improve their website's functionality. We have experience integrating APIs for payment gateways, social media platforms,
+     and other web services. Our team ensures that the integration is secure and complies with industry standards.`,
+    icon: "api",
+  },
+];
+---
+
+<Layout title="Web Development Belleview Florida ">
+  <Container>
+    <Region region={villages} content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>

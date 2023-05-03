@@ -1,0 +1,65 @@
+---
+import Container from "@components/container.astro";
+import CTA from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import LandingPageHeader from "../components/landingPageHeader.astro";
+import LandingPageFeatrues from "@components/landingPageFeatrues.astro";
+import Region from "@components/landingPageRegion.astro";
+import villages from "@assets/Leesburg.jpg";
+
+const apiInfo = [
+  {
+    headline: "Web Development Lessburg Florida",
+    blurb: `PineCode is proud to be a local business serving the community of Leesburg, Florida. 
+    As a company near the heart of the city, we understand the unique needs and challenges 
+    of our clients. Our team is dedicated to providing personalized web development services to help
+     businesses in Leesburg thrive in the digital world. We believe in building strong relationships with 
+     our clients, which is why we are always happy to meet in person to discuss any needs or concerns they may
+      have. Whether you need
+     a new website, an e-commerce platform, or help with SEO and web API integrations, PineCode is here to help.`,
+  },
+];
+
+const content = [
+  {
+    title: "Leesburg Florida",
+    discription: ` 
+    At PineCode, we offer a range of web development and digital marketing services to businesses in Leesburg, Florida, to help them establish a strong online presence and reach their target audience. Our team of experts is dedicated to providing customized solutions to our clients that cater to their specific needs.  `,
+  },
+];
+
+const features = [
+  {
+    title: "Digital Marketing",
+    description: `In addition to web development, we also offer digital marketing services that help businesses in Leesburg promote their products and services online. Our team of experts can help businesses establish a strong social media presence, create targeted advertising campaigns,
+     and implement effective search engine optimization strategies to drive traffic to their websites.`,
+    icon: "design",
+  },
+  {
+    title: "SEO",
+    description: `we understand the importance of local SEO for businesses in Leesburg. That's why we offer local SEO services to help businesses rank higher in search results when people in Leesburg search for relevant products or services. Our team can help businesses optimize their websites for local search terms, create accurate listings
+     on local directories, and establish a positive online reputation through customer reviews.`,
+    icon: "seo",
+  },
+  {
+    title: "Web Development",
+    description: `One of the things we do for the city of Leesburg is web development services that include designing and developing websites that are tailored to meet the unique requirements of businesses in the area. We ensure that our websites are optimized 
+    for search engines and mobile devices, providing a seamless user experience for visitors.`,
+    icon: "development",
+  },
+];
+---
+
+<Layout title="Web Development Leesburg Florida ">
+  <Container>
+    <Region region={villages} content={apiInfo[0]} />
+    <LandingPageFeatrues
+      info={content[0]}
+      feature={features.map((items) => {
+        return items;
+      })}
+    />
+
+    <CTA />
+  </Container>
+</Layout>
