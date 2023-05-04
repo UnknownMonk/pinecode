@@ -5,6 +5,7 @@ import Dropdown from "./dropdown.astro";
 import { Picture } from "@astrojs/image/components";
 import pineconeIcon from "assets/pinecone.png";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Icon } from "astro-icon";
 
 const menuitems = [
   {
@@ -91,8 +92,22 @@ const menuitems = [
         </div>
       </MenuItems>
     </Astronav>
+
     <div>
-      <div class="hidden lg:flex items-center gap-4"></div>
+      <div class="mr-5 hidden lg:flex items-center gap-4">
+        <a
+          target="blank"
+          href="https://twitter.com/PineCode_Meida"
+          class="w-[25px] h-[25px] text-lg">
+          <Icon name="twitter" />
+        </a>
+        <a
+          target="blank"
+          href="https://www.youtube.com/channel/UCNSMIpyKt44E769G8EScNMQ"
+          class="w-[25px] h-[25px] text-lg">
+          <Icon name="youtube" />
+        </a>
+      </div>
     </div>
   </header>
 </Container>
