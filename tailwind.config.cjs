@@ -45,7 +45,7 @@ module.exports = {
       },
 
       animation: {
-        wobble: "wobble 1.1s ease-out",
+        wobble: "wobble 1.1s ease-in",
       },
     },
   },
