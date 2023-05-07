@@ -14,15 +14,15 @@ import { Icon } from "astro-icon";
 </head>
 
 <main
-  class="rounded-t-xl mb-10 bg-forest cover bg-no-repeat bg-cover grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  class="rounded-t-xl mb-10 bg-forest cover bg-no-repeat bg-cover grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="relative py-6 md:order-0 hidden md:block">
     <Picture
       id="anchor"
       src={heroImage}
       alt="PineCode Logo"
-      widths={[200, 600, 800]}
-      aspectRatio="4:4"
-      sizes="(max-width: 800px) 100vw, 620px"
+      widths={[400, 1000, 1200]}
+      aspectRatio="1:1"
+      sizes="(max-width: 400px) and (max-width: 1000px) and (max-width: 1200px)100vw 620pxs) "
       loading="eager"
       format="avif"
     />
