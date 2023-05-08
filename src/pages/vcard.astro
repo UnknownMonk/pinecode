@@ -1,0 +1,82 @@
+---
+---
+
+<div id="contact-information">
+  <div class="container">
+    <div class="row" ng-show="view.phone">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card" ng-show="view.phone">
+          <div class="card-body">
+            <h6 class="card-title">Phone</h6>
+            <div class="card-text">
+              <ul>
+                <li ng-repeat="phone in view.phone" ng-show="phone.value">
+                  <div class="contact-icon phone"></div>
+                  <div class="contact-details ng-binding">813-525-7081</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-show="view.email">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card" ng-show="view.email">
+          <div class="card-body">
+            <h6 class="card-title">Email</h6>
+            <div class="card-text">
+              <ul>
+                <li ng-repeat="email in view.email" ng-show="email.value">
+                  <div class="contact-icon email"></div>
+                  <div class="contact-details ng-binding">
+                    jonasw@pinecode.site
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-show="view.website">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card" ng-show="view.website">
+          <div class="card-body">
+            <h6 class="card-title">Website</h6>
+            <div class="card-text">
+              <ul>
+                <li ng-repeat="website in view.website" ng-show="website.value">
+                  <div class="contact-icon website"></div>
+                  <div class="contact-details ng-binding">
+                    www.pinecode.site
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-show="view.location">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card" ng-show="view.location">
+          <div class="card-body">
+            <h6 class="card-title">Location</h6>
+            <div class="card-text">
+              <ul>
+                <li
+                  ng-repeat="location in view.location"
+                  ng-show="location.value">
+                  <div class="contact-icon location"></div>
+                  <div class="contact-details ng-binding">ocklawaha</div>
+                </li>
+              </ul>
+              <a href="/vcard/JonasWalden.vcf/?download=true">click</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
