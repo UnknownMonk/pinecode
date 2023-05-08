@@ -1,82 +1,133 @@
 ---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
 ---
 
-<div id="contact-information">
-  <div class="container">
-    <div class="row" ng-show="view.phone">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="card" ng-show="view.phone">
-          <div class="card-body">
-            <h6 class="card-title">Phone</h6>
-            <div class="card-text">
-              <ul>
-                <li ng-repeat="phone in view.phone" ng-show="phone.value">
-                  <div class="contact-icon phone"></div>
-                  <div class="contact-details ng-binding">813-525-7081</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<!-- <div
+  class="animate-fade absolute flex justify-center items-start top-0 z-20 w-full h-[2000px]">
+  <Picture
+    src="/hero.png"
+    alt="author picture"
+    sizes="(max-width: 800px) 100vw, 300px"
+    widths={[200, 400]}
+    aspectRatio="1:1"
+    fit="cover"
+    position="center"
+    class="w-[600px] h-[600px] p-5 mr-auto ml-auto mt-10 rounded-full transition group-hover:-translate-y-1 group-hover:shadow-xl"
+  />
+</div> -->
+<div class="w-full h-[350px] bg-[#388b76] pt-[7%] text-center">
+  <div
+    class="drop-shadow-[0_-10px_10px_rgba(0,0,0,0.25)] m-[5px] mr-auto ml-auto max-w-xl">
+    <div class="h-[300px] flex-col gap-3 max-w-xl m-auto bg-[#388c77]">
+      <Picture
+        src="/me.png"
+        alt="author picture"
+        sizes="(max-width: 800px) 100vw, 300px"
+        widths={[200, 400]}
+        aspectRatio="1:1"
+        background="#ffffff"
+        fit="cover"
+        position="center"
+        class="w-[140px] h-[140px] p-5 mr-auto ml-auto mt-10 rounded-full transition group-hover:-translate-y-1 group-hover:shadow-xl"
+      />
+      <h3 class="mt-1 text-slate-50 text-2xl">Jonas Walden</h3>
+      <h3 class="mt-2 text-slate-50 text-sm">The Website Guy</h3>
+
+      <div class="flex justify-between mt-auto">
+        <a
+          href="tel:8135257081"
+          class="mt-8 p-2 border-l-[.5px] border-t-[.5px] border-r-[.5px] border-emerald-400 w-[50%] text-[16px] text-white h-[80px]">
+          <Icon name="phone" class="ml-auto mr-auto w-[30px] h-[30px] block" />
+          Call
+        </a>
+
+        <a
+          href="mailto:jonasw@pinecode.site?subject=From my vCard&body="
+          class="mt-8 p-2 border-r-[.5px] border-t-[.5px] border-emerald-400 w-[50%] text-[16px] text-white h-[80px]">
+          <Icon name="mail" class="ml-auto mr-auto w-[30px] h-[30px] block" />
+          Mail
+        </a>
       </div>
     </div>
-    <div class="row" ng-show="view.email">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="card" ng-show="view.email">
-          <div class="card-body">
-            <h6 class="card-title">Email</h6>
-            <div class="card-text">
-              <ul>
-                <li ng-repeat="email in view.email" ng-show="email.value">
-                  <div class="contact-icon email"></div>
-                  <div class="contact-details ng-binding">
-                    jonasw@pinecode.site
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
+
+  <div
+    class="mt=[200px] drop-shadow-[0_15px_10px_rgba(0,0,0,0.25)] bg-white flex flex-col gap-3 m-auto max-w-xl p-10">
+    <h4 class="text-left text-lg text-gray-800">
+      Jonas Walden, here I run a little web design agency called Pinecode. I
+      would love to talk about your next project.
+    </h4>
+    <hr class="border-t-[1px] border-black" />
+  </div>
+  <div
+    class="mt=[10px] drop-shadow-[0_15px_10px_rgba(0,0,0,0.25)] bg-white flex justify-start gap-1 ml-auto mr-auto max-w-xl pr-10 pl-10 pb-10">
+    <div class="w-[7%]">
+      <Icon
+        class="rounded-lg mt-[8px] mb-auto h-[30px] from-neutral-500 p-[2px] bg-[#388b76]"
+        name="phone"
+      />
     </div>
-    <div class="row" ng-show="view.website">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="card" ng-show="view.website">
-          <div class="card-body">
-            <h6 class="card-title">Website</h6>
-            <div class="card-text">
-              <ul>
-                <li ng-repeat="website in view.website" ng-show="website.value">
-                  <div class="contact-icon website"></div>
-                  <div class="contact-details ng-binding">
-                    www.pinecode.site
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="block grow-[1] width-[90%]">
+      <h4 class="text-left text-md text-black">
+        <a href="tel:8135257081">813-525-7081</a>
+      </h4>
+      <h4 class="text-left text-md text-gray-800">Mobile</h4>
+      <hr class="border-t-[1px] border-black" />
     </div>
-    <div class="row" ng-show="view.location">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="card" ng-show="view.location">
-          <div class="card-body">
-            <h6 class="card-title">Location</h6>
-            <div class="card-text">
-              <ul>
-                <li
-                  ng-repeat="location in view.location"
-                  ng-show="location.value">
-                  <div class="contact-icon location"></div>
-                  <div class="contact-details ng-binding">ocklawaha</div>
-                </li>
-              </ul>
-              <a href="/vcard/JonasWalden.vcf/?download=true">click</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
+  <div
+    class="mt=[10px] drop-shadow-[0_15px_10px_rgba(0,0,0,0.25)] bg-white flex justify-start gap-1 ml-auto mr-auto max-w-xl pr-10 pl-10 pb-10">
+    <div class="w-[7%]">
+      <Icon
+        class="rounded-lg mt-[8px] mb-auto h-[30px] from-neutral-500 p-[2px] bg-[#388b76]"
+        name="mail"
+      />
     </div>
+    <div class="block grow-[1] width-[90%]">
+      <h4 class="text-left text-md text-black">
+        <a href="mailto:jonasw@pinecode.site?subject=From my vCard&body="
+          >jonasw@pinecode.site</a
+        >
+      </h4>
+      <h4 class="text-left text-md text-gray-800">Mail</h4>
+      <hr class="border-t-[1px] border-black" />
+    </div>
+  </div>
+  <div
+    class="mt=[10px] drop-shadow-[0_15px_10px_rgba(0,0,0,0.25)] bg-white flex justify-start gap-1 ml-auto mr-auto max-w-xl pr-10 pl-10 pb-10">
+    <div class="w-[7%]">
+      <Icon
+        class="rounded-lg mt-[8px] mb-auto h-[30px] from-neutral-500 p-[2px] bg-[#388b76]"
+        name="web"
+      />
+    </div>
+    <div class="block grow-[1] width-[90%]">
+      <h4 class="text-left text-md text-black">
+        <a href="https://pinecode.site">PineCode.site</a>
+      </h4>
+      <h4 class="text-left text-md text-gray-800">Mobile</h4>
+      <hr class="border-t-[1px] border-black" />
+    </div>
+  </div>
+  <div
+    class="mt=[10px] drop-shadow-[0_15px_10px_rgba(0,0,0,0.25)] bg-white flex gap-1 ml-auto mr-auto max-w-xl pr-10 pl-10 pb-10">
+    <a
+      class="drop-shadow-[0_15px_10px_rgba(0,0,0,0.25)] hover:drop-shadow-[0_15px_15px_rgba(0,0,0,0.30)] bg-[#388b76] w-full h-[50px] text-white flex justify-center"
+      href="/vcard/JonasWalden.vcf"
+      ><Icon class="w-[7%]" name="person" /><span class="ml-2 mt-auto mb-auto">
+        Download My Vcard</span
+      >
+    </a>
   </div>
 </div>

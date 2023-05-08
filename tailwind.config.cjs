@@ -5,6 +5,13 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        fadeOut: {
+          "0%": { backgroundColor: "rgba(255, 255, 255, 1)" },
+          "100%": {
+            backgroundColor: "rgba(255, 255, 255, 0)",
+            display: "none",
+          },
+        },
         wobble: {
           from: {
             transform: "translateY(-300%)",
@@ -46,6 +53,7 @@ module.exports = {
 
       animation: {
         wobble: "wobble 1.1s ease-in",
+        fade: "fadeOut 5s ease-in-out",
       },
     },
   },
