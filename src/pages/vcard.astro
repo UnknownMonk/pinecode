@@ -21,7 +21,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
-            <PageTransition speed={2800} background="white" zIndex={98} />
+            <PageTransition speed={4000} background="white" zIndex={98} />
             <div class="w-full aspect-square">
               <Picture
                 src={teamMemberEntry.data.avatar.src}
