@@ -5,6 +5,7 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 import Layout from "@layouts/Layout.astro";
+import { PageTransition } from "astro-page-transition";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -19,6 +20,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
+            <PageTransition speed={5000} background="white" zIndex={98} />
             <div class="w-full aspect-square">
               <Picture
                 src={teamMemberEntry.data.avatar.src}
