@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://pinecode.site/sitemap-0.xml
 Sitemap: https://pinecode.site/sitemap-index.xml
