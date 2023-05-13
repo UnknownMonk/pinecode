@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+
+import PageTransition from "../components/PageTransition.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<!-- <Layout title="grace"> -->
+<Container>
+  <div
+    class="grid md:grid-cols-1 gap-10 mx-auto max-w-4xl mt-12 justify-items-center">
+    {
+      publishedTeamMembers.map((teamMemberEntry) => (
+        <div class="group">
+          <PageTransition speed={1000} background="white" zIndex={98} />
+          <div class="w-full aspect-square">
+            <Picture
+              src="/mom.png"
+              alt="grace"
+              sizes="(max-width: 800px) 100vw, 300px"
+              widths={[200, 400]}
+              aspectRatio="1:1"
+              background="#ffffff"
+              fit="cover"
+              position="center"
+              class="w-full rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+            />
+          </div>
+
+          <div class=" bg-[#263940] flex justify-between mt-auto">
+            <a
+              href="tel:3524211102"
+              class=" p-2 border-l-[.5px] border-t-[.5px] border-r-[.5px] border-emerald-400 w-[50%] text-[16px]  h-[40px]">
+              <Icon
+                name="phone"
+                class="ml-auto mr-auto w-[30px] h-[30px] block"
+              />
+            </a>
+
+            <a
+              href="mailto:gracehodgin@yahoo.com?subject=From my vCard&body="
+              class=" p-2 border-r-[.5px] border-t-[.5px] border-emerald-400 w-[50%] text-[16px] text-white h-[40px]">
+              <Icon
+                name="mail"
+                class="ml-auto mr-auto w-[30px] h-[30px] block"
+              />
+            </a>
+          </div>
+          <div class="mt-3">
+            <Link
+              size="lg"
+              style="green"
+              rel="noopener"
+              href="#"
+              class="flex gap-1 items-center justify-center"
+              target="_blank">
+              <Icon class="text-black w-4 h-4" name="person" />
+              Grace Hodgin / Professional Creative
+            </Link>
+          </div>
+          <div class="mt-3">
+            <Link
+              size="lg"
+              style="green"
+              rel="noopener"
+              href="/vcard/grace.vcf"
+              class="flex gap-1 items-center justify-center"
+              target="_blank">
+              <Icon class="text-black w-4 h-4" name="person" />
+              Add My Vcard To Your Contacts
+            </Link>
+          </div>
+          <div class="mt-3">
+            <Link
+              style="green"
+              size="lg"
+              rel="noopener"
+              href="/"
+              class="flex gap-1 items-center justify-center"
+              target="_blank">
+              <Icon class="text-white w-4 h-4" name="web" />
+              Under Construction
+            </Link>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Container>
+<!-- </Layout> -->
